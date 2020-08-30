@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import styled, { ThemeProvider } from "styled-components";
+import AchievementScene from "./achievements/AchievementScene";
+import Button from "./common/Button";
+
+const theme = {};
+
+const AchievementButton = styled(Button)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`;
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <AchievementButton onClick={() => setIsOpen(true)}>
+        Click me!
+      </AchievementButton>
+      {isOpen && (
+        <AchievementScene isOpen={isOpen} onClose={() => setIsOpen(false)} />
+      )}
+    </ThemeProvider>
   );
 }
 
