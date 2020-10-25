@@ -11,7 +11,7 @@ import JumboCoins from "../common/JumboCoins";
 import BaseBadgeFrame from "./BadgeFrame";
 import Badge from "./Badge";
 
-import leeroy from "./leeroy.png";
+import image from "./stonks.jpg";
 
 interface Props {
   className?: string;
@@ -131,19 +131,16 @@ export default function AchievementCard({ className }: Props) {
         transition={{ type: "tween" }}
       >
         <BadgeFrame>
-          <Badge image={leeroy} />
+          <Badge image={image} />
         </BadgeFrame>
 
         <Content>
-          <Title>Shutup Leeroy</Title>
-          <Description>
-            Merge five patches without Leeroy Jenkins dropping a -1 on any of
-            them.
-          </Description>
+          <Title>Founder</Title>
+          <Description>Become a founding member of Jumbo Arcade.</Description>
 
           <Reward>
             <JumboCoins count={3} />
-            &nbsp; 1,500 Jumbo Coins
+            &nbsp; 9,999 Jumbo Coins
           </Reward>
 
           <ProgressBar>
